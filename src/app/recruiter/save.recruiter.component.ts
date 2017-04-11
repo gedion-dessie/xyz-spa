@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {Recruiter} from "../app.custom.types";
 import {RecruiterService} from "../services/recruiter.service";
 import {Subscription} from "rxjs";
-import {REST_BASE_URL} from "../app.constants";
+import {REST_BASE_URL, STATES} from "../app.constants";
 import {Router} from "@angular/router";
 /**
  * Created by gedionz on 4/10/17.
@@ -15,6 +15,7 @@ import {Router} from "@angular/router";
   styles : ['']
 })
 export class SaveRecruiterComponent implements OnDestroy {
+  private states = STATES;
   private title = "Add new recruiter";
   private apiUrl = `${REST_BASE_URL}/recruiters`;
   private recruiterForm : FormGroup;

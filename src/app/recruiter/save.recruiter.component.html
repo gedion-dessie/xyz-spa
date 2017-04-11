@@ -56,7 +56,9 @@
       <div class="form-group row">
         <label for="state" class="col-2 col-form-label">State</label>
         <div class="col-7">
-          <input class="form-control" type="text" formControlName="state" id="state"  >
+          <select class="form-control" formControlName="state" id="state" required>
+            <option *ngFor="let state of states" [value]="state.code">{{state.name}}</option>
+          </select>
         </div>
       </div>
 

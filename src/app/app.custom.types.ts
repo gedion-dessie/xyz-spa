@@ -25,3 +25,8 @@ export interface Person {
   phoneNumber : string,
   address : Address
 }
+
+export interface USState {
+  code : string,
+  name : string
+}
