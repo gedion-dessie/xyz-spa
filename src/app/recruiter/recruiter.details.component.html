@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div>
+  <div class="modal-header">
+    <h4 class="modal-title">Recruiter Details</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Name: {{ recruiter.person.firstName }} {{ recruiter.person.lastName }}</p>
+    <p>Email: {{ recruiter.person.email }} </p>
+    <p>
+      Phone: (Direct) {{ recruiter.person.phoneNumber }}
+      <span *ngIf="recruiter.officePhoneNumber">
+        | (Office) {{ recruiter.officePhoneNumber }}
+      </span>
+      <span *ngIf="recruiter.extension">
+         x{{ recruiter.extension }}
+      </span>
+    </p>
+    <p>
+      Address: {{ recruiter.person.address.street }}, {{ recruiter.person.address.zipCode }}, {{ recruiter.person.address.city }}, {{ recruiter.person.address.state }}
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.close('Close click')">Close</button>
+  </div>
+</div>
